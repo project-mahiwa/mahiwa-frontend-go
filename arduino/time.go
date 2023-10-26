@@ -1,6 +1,6 @@
 package arduino
 
-func Delay(){
-
-}
+//go:wasm-module arduino
+//go:export delay
+func Delay(ms uint)
 
