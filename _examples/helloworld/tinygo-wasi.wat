@@ -9,6 +9,7 @@
   (type (;7;) (func (param i32 i32 i32 i32)))
   (import "serial" "print" (func $print (type 3)))
   (import "wasi_snapshot_preview1" "fd_write" (func $runtime.fd_write (type 2)))
+  (import "arduino" "delay" (func $delay (type 1)))
   (func $__wasm_call_ctors (type 0)
     nop)
   (func $tinygo_getCurrentStackPointer (type 6) (result i32)
@@ -52,105 +53,6 @@
     call $asyncify_stop_unwind
     local.get 1
     global.set $__stack_pointer)
-  (func $delay (type 1) (param i32)
-    nop)
-  (func $println (type 3) (param i32 i32)
-    (local i32)
-    global.get 1
-    i32.const 2
-    i32.eq
-    if  ;; label = @1
-      global.get 2
-      global.get 2
-      i32.load
-      i32.const 8
-      i32.sub
-      i32.store
-      global.get 2
-      i32.load
-      local.tee 1
-      i32.load
-      local.set 0
-      local.get 1
-      i32.load offset=4
-      local.set 1
-    end
-    block (result i32)  ;; label = @1
-      global.get 1
-      i32.const 2
-      i32.eq
-      if  ;; label = @2
-        global.get 2
-        global.get 2
-        i32.load
-        i32.const 4
-        i32.sub
-        i32.store
-        global.get 2
-        i32.load
-        i32.load
-        local.set 2
-      end
-      local.get 2
-      i32.const 0
-      global.get 1
-      select
-      i32.eqz
-      if  ;; label = @2
-        local.get 0
-        local.get 1
-        call $print
-        i32.const 0
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      local.get 2
-      i32.const 1
-      i32.eq
-      i32.const 1
-      global.get 1
-      select
-      if  ;; label = @2
-        i32.const 65536
-        i32.const 1
-        call $print
-        i32.const 1
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      return
-    end
-    local.set 2
-    global.get 2
-    i32.load
-    local.get 2
-    i32.store
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 4
-    i32.add
-    i32.store
-    global.get 2
-    i32.load
-    local.tee 2
-    local.get 0
-    i32.store
-    local.get 2
-    local.get 1
-    i32.store offset=4
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 8
-    i32.add
-    i32.store)
   (func $internal/task.start (type 0)
     (local i32 i32 i32 i32 i32 i32 i32)
     global.get 1
@@ -4309,8 +4211,41 @@
         if  ;; label = @3
           i32.const 65756
           i32.const 14
-          call $println
+          call $print
           i32.const 1
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        local.get 0
+        i32.const 2
+        i32.eq
+        i32.const 1
+        global.get 1
+        select
+        if  ;; label = @3
+          i32.const 65536
+          i32.const 1
+          call $print
+          i32.const 2
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        local.get 0
+        i32.const 3
+        i32.eq
+        i32.const 1
+        global.get 1
+        select
+        if  ;; label = @3
+          i32.const 900
+          call $delay
+          i32.const 3
           global.get 1
           i32.const 1
           i32.eq
@@ -6082,8 +6017,6 @@
   (global (;1;) (mut i32) (i32.const 0))
   (global (;2;) (mut i32) (i32.const 0))
   (export "memory" (memory 0))
-  (export "delay" (func $delay))
-  (export "println" (func $println))
   (export "malloc" (func $malloc))
   (export "free" (func $free))
   (export "calloc" (func $calloc))
