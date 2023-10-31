@@ -39,3 +39,5 @@ wasiをbuildするためにmain関数が絶対に必要(ドキュメントより
 ```shell
 tinygo build -target wasi -o tinygo-wasi.wasm main.go
 ```
+
+hello_worldのwasmファイル(\_example/helloworld/example_output_wasm/tinygo-wasi.wasm)で82.5 kB程度の大きさ．
