@@ -39,6 +39,14 @@ func 関数名(引数)
 
 Goのビルドでは中身なし関数だとエラー出るので，wasm-abi=genericなwasmファイルを作るにはTinyGoのbuildを使うしか無い(wasi,wasmはできる)
 
+### サイズの指定
+
+メモリがシビアなマイコンで動かなくなるので調整する
+
+```
+tinygo build -target ./target.json -o tinygo-wasi-memory-limit.wasm main.go
+```
+
 # watでの確認
 
 ```
