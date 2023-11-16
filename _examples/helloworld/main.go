@@ -7,7 +7,7 @@ import (
 
 // mainはtarget wasiのときに絶対に必要
 func main() {
-    serial.Print("Hello mahiwa")
+    serial.Print("Hello mahiwa written in Go language")
     for {
     serial.Println("mahiwa running")
     arduino.Delay(900)
