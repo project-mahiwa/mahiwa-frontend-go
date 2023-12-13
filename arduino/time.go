@@ -5,22 +5,22 @@ package arduino
 //
 //go:wasm-module arduino
 //go:export delay
-func Delay(ms uint)
+func Delay(ms uint32)
 
 // Equivalent to Arduino's delayMicroseconds https://www.arduino.cc/reference/en/language/functions/time/delaymicroseconds/
 //
 //go:wasm-module arduino
 //go:export delayMicroseconds
-func DelayMicroseconds(us uint)
-
-// Equivalent to Arduino's millis https://www.arduino.cc/reference/en/language/functions/time/millis/
-//
-//go:wasm-module arduino
-//go:export millis
-func Millis() uint
+func DelayMicroseconds(us uint32)
 
 // Equivalent to Arduino's micros https://www.arduino.cc/reference/en/language/functions/time/micros/
 //
 //go:wasm-module arduino
 //go:export micros
-func Micros() uint
+func Micros() int64
+
+// Equivalent to Arduino's millis https://www.arduino.cc/reference/en/language/functions/time/millis/
+//
+//go:wasm-module arduino
+//go:export millis
+func Millis() int64
