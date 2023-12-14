@@ -11,4 +11,4 @@ func AnalogRead(pin uint8) uint16
 //
 //go:wasm-module arduino
 //go:export analogWrite
-func AnalogWrite(pin uint8, value int)
+func AnalogWrite(pin uint8, value int32)

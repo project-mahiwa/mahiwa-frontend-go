@@ -5,13 +5,13 @@ package arduino
 //
 //go:wasm-module arduino
 //go:export digitalRead
-func DigitalRead(pin uint8) int
+func DigitalRead(pin uint8) int32
 
 // Equivalent to Arduino's digitalWrite https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/
 //
 //go:wasm-module arduino
 //go:export digitalWrite
-func DigitalWrite(pin uint8, value int)
+func DigitalWrite(pin uint8, value int32)
 
 // Equivalent to Arduino's pinMode https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/
 //
