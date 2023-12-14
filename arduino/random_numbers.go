@@ -4,7 +4,7 @@ package arduino
 // Equivalent to Arduino's random https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
 //
 //go:wasm-module arduino
-//export random
+//export randomArduino
 func Random() int64
 
 // Equivalent to Arduino's randomSeed https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/
