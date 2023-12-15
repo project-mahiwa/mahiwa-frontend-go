@@ -7,6 +7,8 @@ import (
 
 // mainはtarget wasiのときに絶対に必要
 func main() {
+	serial.Print("Hello mahiwa written in Go language")
+
 	serial.Println("printLong test")
 	serial.PrintLong(111111111111111)
 	serial.Println("")
@@ -16,9 +18,14 @@ func main() {
 	serial.Println("")
 	serial.PrintLong(arduino.Random())
 	serial.Println("")
-	serial.Print("Hello mahiwa written in Go language")
-	for {
-		serial.Println("mahiwa running")
-		arduino.Delay(900)
-	}
+
+	// cos(1.0)の値は0.54になるはず
+	serial.Print("cos(1.0):")
+	// cos1 := arduino.Cos(1.0)
+	serial.PrintDouble(1.11,6)
+	serial.Println("")
+    for {
+    serial.Println("🪐")
+    arduino.Delay(900)
+    }
 }
