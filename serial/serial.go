@@ -24,8 +24,8 @@ func PrintLong(num int64)
 
 //go:wasm-module serial
 //export printFloat
-func PrintFloat(num float32)
+func PrintFloat(num float32, format uint8)
 
 //go:wasm-module serial
 //export printDouble
-func PrintDouble(num float64)
+func PrintDouble(num float64, format uint8)
