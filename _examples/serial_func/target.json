@@ -1,8 +1,12 @@
 {
-  "inherits": ["wasm"],
+  "inherits": [
+    "wasi"
+  ],
+  "no-debug": true,
+  "panic": "trap",
+  "heap-size": 4096,
   "ldflags": [
-    "--initial-memory=65536",
     "--max-memory=65536",
-    "-zstack-size=2048"
+    "-zstack-size=6144"
   ]
 }

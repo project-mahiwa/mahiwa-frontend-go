@@ -12,7 +12,7 @@ func main() {
 	serial.Println("printLong test")
 	serial.PrintLong(111111111111111)
 	serial.Println("")
-	arduino.RandomSeed(1);
+	arduino.RandomSeed(1)
 	serial.Println("==seed1==")
 	serial.PrintLong(arduino.Random())
 	serial.Println("")
@@ -21,11 +21,11 @@ func main() {
 
 	// cos(1.0)の値は0.54になるはず
 	serial.Print("cos(1.0):")
-	// cos1 := arduino.Cos(1.0)
-	serial.PrintDouble(1.11,6)
+	cos1 := arduino.Max(1, 0)
+	serial.PrintLong(cos1)
 	serial.Println("")
-    for {
-    serial.Println("🪐")
-    arduino.Delay(900)
-    }
+	for {
+		serial.Println("🪐")
+		arduino.Delay(900)
+	}
 }
