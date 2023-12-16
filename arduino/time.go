@@ -1,8 +1,7 @@
 // Arduino compatible functions
 package arduino
 
-/// Equivalent to Arduino's delay
-//go:wasm-module arduino
-//go:export delay
-func Delay(ms uint)
-
+// / Equivalent to Arduino's delay
+//
+//go:wasmimport arduino delay
+func Delay(ms int32)

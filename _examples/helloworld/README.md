@@ -61,3 +61,12 @@ go: unsupported GOOS/GOARCH pair general/wasm
 ```
 
 以上のことからTinyGoでビルドするしか無い
+
+# go
+
+`//go:wasmimport env fib` のようにつけるとできる。  
+(TinyGoと違い、型を厳密に見るので、uint8とかで怒られる)
+
+```
+GOOS=wasip1 GOARCH=wasm go build -o main.wasi.wasm main.go
+```
