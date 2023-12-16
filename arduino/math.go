@@ -34,7 +34,7 @@ func Min(x, y int64) int64
 // Equivalent to Arduino's pow https://www.arduino.cc/reference/en/language/functions/math/pow/
 //
 //go:wasm-module arduino
-//export pow
+//export powArduino
 func Pow(base, exponent int64) float64
 
 // Equivalent to Arduino's sq https://www.arduino.cc/reference/en/language/functions/math/sq/
@@ -46,5 +46,5 @@ func Sq(x int32) int32
 // Equivalent to Arduino's sqrt https://www.arduino.cc/reference/en/language/functions/math/sqrt/
 //
 //go:wasm-module arduino
-//export sqrt
+//export sqrtArduino
 func Sqrt(x int32) float64
