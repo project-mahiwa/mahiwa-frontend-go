@@ -1,0 +1,12 @@
+{
+  "inherits": [
+    "wasi"
+  ],
+  "no-debug": true,
+  "panic": "trap",
+  "heap-size": 4096,
+  "ldflags": [
+    "--max-memory=65536",
+    "-zstack-size=6144"
+  ]
+}
