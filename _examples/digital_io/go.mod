@@ -1,4 +1,4 @@
-module github.com/project-mahiwa/mahiwa-frontend-go/_examples/io
+module github.com/project-mahiwa/mahiwa-frontend-go/_examples/digital_io
 
 go 1.21.3
 
