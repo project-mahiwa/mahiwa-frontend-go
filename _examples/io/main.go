@@ -8,11 +8,11 @@ import (
 // mainはtarget wasiのときに絶対に必要
 func main() {
 	serial.Print("Hello mahiwa written in Go language")
-	arduino.PinMode(4, arduino.INPUT)
+	arduino.PinMode(3, arduino.OUTPUT)
 	for {
-		arduino.DigitalWrite(4, arduino.HIGH)
+		arduino.DigitalWrite(3, arduino.HIGH)
 		arduino.Delay(1000)
-		arduino.DigitalWrite(4, arduino.LOW)
+		arduino.DigitalWrite(3, arduino.LOW)
 		arduino.Delay(1000)
 	}
 }
