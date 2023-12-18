@@ -1,6 +1,16 @@
 // Arduino compatible functions
 package arduino
 
+const (
+	// pinMode
+	INPUT        = 0
+	OUTPUT       = 1
+	INPUT_PULLUP = 2
+	// digitalWrite
+	HIGH = 1
+	LOW  = 0
+)
+
 // Equivalent to Arduino's digitalRead https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/
 //
 //go:wasm-module arduino
