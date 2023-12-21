@@ -16,17 +16,17 @@ func Println(s string) {
 }
 
 //go:wasm-module serial
-//export printInt
-func PrintInt(num int32)
+//export printI32
+func PrintI32(num int32)
 
 //go:wasm-module serial
-//export printLong
-func PrintLong(num int64)
+//export printI64
+func PrintI64(num int64)
 
 //go:wasm-module serial
-//export printFloat
-func PrintFloat(num float32, format uint8)
+//export printF32
+func PrintF32(num float32, format int32)
 
 //go:wasm-module serial
-//export printDouble
-func PrintDouble(num float64, format uint8)
+//export printF64
+func PrintF64(num float64, format int32)
