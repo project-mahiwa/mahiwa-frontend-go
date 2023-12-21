@@ -7,7 +7,7 @@ import (
 
 func main() {
 	arduino.Delay(5000)
-	serial.Println("TinyGo mahiwa | check_sub")
+	serial.Println("TinyGo mahiwa | check_1s")
 	start := arduino.Micros()
 	arduino.Delay(1000)
 	end := arduino.Micros()
@@ -15,5 +15,4 @@ func main() {
 	serial.Print("time(micro): ")
 	serial.PrintI64(end - start)
 	serial.Println("")
-
 }
