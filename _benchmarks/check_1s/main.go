@@ -13,7 +13,7 @@ func main() {
 	end := arduino.Micros()
 	serial.Println("delay 1 second")
 	serial.Print("time(micro): ")
-	serial.PrintLong(end - start)
+	serial.PrintI64(end - start)
 	serial.Println("")
 
 }

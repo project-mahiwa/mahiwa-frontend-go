@@ -21,5 +21,19 @@ func isPrime(num int) bool {
 func main() {
 	arduino.Delay(5000)
 	serial.Println("TinyGo mahiwa | prime")
+	start := arduino.Micros()
+	result := isPrime(2147483647)
+	end := arduino.Micros()
+	serial.Print("result: ")
+	if(result){
+		serial.Print("prime")
+	}else{
+		serial.Print("not prime")
+	}
+	serial.Println("")
+	serial.Print("time(micro): ")
+	serial.PrintI64(end - start)
+	serial.Println("")
+
 
 }
