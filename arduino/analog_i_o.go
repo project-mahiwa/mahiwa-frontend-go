@@ -5,10 +5,10 @@ package arduino
 //
 //go:wasm-module arduino
 //export analogRead
-func AnalogRead(pin uint8) uint16
+func AnalogRead(pin int32) int32
 
 // Equivalent to Arduino's analogWrite https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
 //
 //go:wasm-module arduino
 //export analogWrite
-func AnalogWrite(pin uint8, value int32)
+func AnalogWrite(pin int32, value int32)

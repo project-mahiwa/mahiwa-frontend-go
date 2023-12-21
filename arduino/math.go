@@ -17,25 +17,25 @@ func Constrain(x, a, b int32) int32
 //
 //go:wasm-module arduino
 //export map
-func Map(value, fromLow, fromHigh, toLow, toHigh int64) int32
+func Map(value, fromLow, fromHigh, toLow, toHigh int32) int32
 
 // Equivalent to Arduino's max https://www.arduino.cc/reference/en/language/functions/math/max/
 //
 //go:wasm-module arduino
 //export max
-func Max(x, y int64) int64
+func Max(x, y int32) int32
 
 // Equivalent to Arduino's min https://www.arduino.cc/reference/en/language/functions/math/min/
 //
 //go:wasm-module arduino
 //export min
-func Min(x, y int64) int64
+func Min(x, y int32) int32
 
 // Equivalent to Arduino's pow https://www.arduino.cc/reference/en/language/functions/math/pow/
 //
 //go:wasm-module arduino
 //export powArduino
-func Pow(base, exponent int64) float64
+func Pow(base, exponent int32) float64
 
 // Equivalent to Arduino's sq https://www.arduino.cc/reference/en/language/functions/math/sq/
 //
