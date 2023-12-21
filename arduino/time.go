@@ -5,13 +5,13 @@ package arduino
 //
 //go:wasm-module arduino
 //export delay
-func Delay(ms uint32)
+func Delay(ms int64)
 
 // Equivalent to Arduino's delayMicroseconds https://www.arduino.cc/reference/en/language/functions/time/delaymicroseconds/
 //
 //go:wasm-module arduino
 //export delayMicroseconds
-func DelayMicroseconds(us uint32)
+func DelayMicroseconds(us int64)
 
 // Equivalent to Arduino's micros https://www.arduino.cc/reference/en/language/functions/time/micros/
 //
