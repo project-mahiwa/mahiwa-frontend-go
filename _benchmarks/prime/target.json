@@ -1,5 +1,6 @@
 {
   "inherits": ["wasm"],
+  "opt": "s",
   "ldflags": [
     "--initial-memory=65536",
     "--max-memory=65536",
