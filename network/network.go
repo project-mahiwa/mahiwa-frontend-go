@@ -37,14 +37,33 @@ func WlanConnect(ssid string, password string)
 //export wlanStatus
 func WlanStatus() int32
 
-// / 例なし
-//
-//go:wasm-module network
-//export wlanIsConnected
-func WlanIsConnected() int32
+// / 接続しているかをboolで返す
+func WlanIsConnected() bool {
+	// 判定処理はC側でやる(0か1かが帰ってくる)
+	if WlanStatus() == WL_CONNECTED {
+		return true
+	}
+	return false
+}
 
-// / get local ip
 //
 //go:wasm-module network
 //export wlanLocalIp
-func WlanLocalIp() string
+func wlanLocalIp(buf *byte)
+
+// / get local ip
+// 共有した線形メモリから文字列を取得
+func WlanLocalIp() string {
+	// 192.168.3.1的な感じで文字列で来るローカルIPなので16byteだけ確保(最大3桁*4+点3+null文字1=16)
+	var buf = make([]byte, 16)
+	wlanLocalIp(&buf[0])
+	//null文字見つける
+	length := -1
+	for index, char := range buf {
+		if char == 0 {
+			break
+		}
+		length = index
+	}
+	return string(buf[:length+1])
+}
