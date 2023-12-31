@@ -1,4 +1,4 @@
-// Functions related to serial communication
+// Functions related to network
 package network
 
 const (
